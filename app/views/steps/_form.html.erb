@@ -1,0 +1,23 @@
+<%= form_for [@guide, @step] do |f| %>
+  <% if @step.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@step.errors.count, "error") %>
+        prohibited this step from being saved:
+      </h2>
+      <ul>
+      <% @step.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class='actions'>
+    <%= f.label :action %>
+    <%= f.text_field :action %>
+  </div>
+  <div class='actions'>
+    <%= f.submit @step.new_record? ? 'Add step' : 'Update step' %>
+  </div>
+<% end %>

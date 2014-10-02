@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+<h1><%= @guide.title %></h1>
+
+<% @guide.steps.each do |step| %>
+  <ul>
+    <li>
+      <%= step.action %>
+      <%= link_to 'Edit', edit_guide_step_path(@guide, step) %>|
+      <%= link_to 'Destroy', guide_step_path(@guide, step), method: :delete,
+        data: { confirm: 'Are you sure?' }%>
+    </li>
+  </ul>
+  <br/>
+<% end %>
+
+<%= render 'steps/form' %>
+
+<%= link_to 'Edit', edit_guide_path(@guide) %> |
+<%= link_to 'Back', guides_path %>

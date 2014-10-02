@@ -1,0 +1,11 @@
+step1:
+  action: Get pie stuff
+  guide_id: guides(:guide).id
+
+step2:
+  action: put together pie stuff
+  guide_id: guides(:guide).id
+
+step3:
+  action: put in oven
+  guide_id: guides(:guide).id
